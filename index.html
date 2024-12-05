@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Black background for neon effect */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .neon {
+            font-size: 100px;
+            font-family: 'Arial', sans-serif;
+            color: #f00; /* Hot Red Color */
+            text-shadow: 
+                0 0 5px #f00, 
+                0 0 10px #f00, 
+                0 0 20px #f00, 
+                0 0 40px #f00, 
+                0 0 80px #f00;
+            animation: glow 1.5s infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 
+                    0 0 5px #f00, 
+                    0 0 10px #f00, 
+                    0 0 20px #f00, 
+                    0 0 40px #f00, 
+                    0 0 80px #f00;
+            }
+            50% {
+                text-shadow: 
+                    0 0 10px #f33, 
+                    0 0 20px #f33, 
+                    0 0 30px #f33, 
+                    0 0 50px #f33, 
+                    0 0 100px #f33;
+            }
+        }
+
+        .loading-text {
+            position: absolute;
+            bottom: 50px;
+            font-size: 24px;
+            font-family: 'Arial', sans-serif;
+            color: #f00; /* Hot Red Color */
+            animation: fade 1.5s infinite;
+        }
+
+        @keyframes fade {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+    </style>
+    <script>
+        // Redirect to the next page after 5 seconds
+        setTimeout(() => {
+            window.location.href = "idt.html"; // Replace with the URL of your next page
+        }, 7000); // 5000 milliseconds = 5 seconds
+    </script>
+</head>
+<body>
+    <div class="neon">N</div>
+    <div class="loading-text">Loading...</div>
+</body>
+</html>

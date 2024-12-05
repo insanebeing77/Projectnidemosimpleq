@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Nida!</title>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Poppins', Arial, sans-serif;
+            background: #e0e5ec;
+            transition: background 0.3s ease;
+        }
+
+        /* Container */
+        .container {
+            text-align: center;
+            background: #e0e5ec;
+            border-radius: 20px;
+            box-shadow: 8px 8px 15px #babecc, -8px -8px 15px #ffffff;
+            padding: 30px;
+            max-width: 400px;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Circle */
+        .circle {
+            width: 100px;
+            height: 100px;
+            background: #e0e5ec;
+            border: 3px solid #ff0000; /* Hot red border */
+            border-radius: 50%;
+            margin: 0 auto;
+            box-shadow: 8px 8px 15px #babecc, -8px -8px 15px #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: #ff0000; /* Hot red text */
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        /* Heading and Paragraph */
+        h1 {
+            font-size: 2rem;
+            color: #ff0000; /* Hot red text */
+            margin: 10px 0;
+        }
+
+        p {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: black; /* Hot red text */
+            margin: 0 0 20px 0;
+        }
+
+        /* Button styles */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #ff0000; /* Hot red text */
+            background: #e0e5ec;
+            border: 3px solid #ff0000; /* Hot red border */
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 8px 8px 15px #babecc, -8px -8px 15px #ffffff;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            box-shadow: inset 5px 5px 10px #babecc, inset -5px -5px 10px #ffffff;
+            color: #e0e5ec;
+            background: #ff0000;
+        }
+
+        /* Toggle button */
+        .toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            background: #e0e5ec;
+            border: 2px solid #ff0000; /* Hot red border */
+            border-radius: 20px;
+            box-shadow: 4px 4px 8px #babecc, -4px -4px 8px #ffffff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .toggle.dark {
+            background: #1c1c1c;
+            box-shadow: 4px 4px 8px #121212, -4px -4px 8px #252525;
+        }
+
+        /* Dark mode styles */
+        .dark-mode {
+            background: #1c1c1c;
+        }
+
+        .dark-mode .container {
+            background: #1c1c1c;
+            box-shadow: 8px 8px 15px #121212, -8px -8px 15px #252525;
+        }
+
+        .dark-mode .circle {
+            background: #1c1c1c;
+            color: #ff0000; /* Hot red text */
+            box-shadow: 8px 8px 15px #121212, -8px -8px 15px #252525;
+        }
+
+        .dark-mode h1, .dark-mode p {
+            color: #ff0000; /* Hot red text */
+        }
+
+        .dark-mode .button {
+            background: #1c1c1c;
+            color: #ff0000;
+            border: 3px solid #ff0000;
+            box-shadow: 8px 8px 15px #121212, -8px -8px 15px #252525;
+        }
+
+        .dark-mode .button:hover {
+            box-shadow: inset 5px 5px 10px #121212, inset -5px -5px 10px #252525;
+            background: #ff0000;
+            color: #1c1c1c;
+        }
+
+        .dark-mode .toggle {
+            background: #1c1c1c;
+            color: #ff0000;
+            border: 2px solid #ff0000; /* Hot red border */
+            box-shadow: 4px 4px 8px #121212, -4px -4px 8px #252525;
+        }
+    </style>
+</head>
+<body>
+    <button class="toggle" id="theme-toggle">🌞</button>
+
+    <div class="container">
+        <div class="circle">🎂</div>
+        <h1>Happy Birthday in Advance, Nida! legend nida san</h1>
+        <p>Wishing you a wonderful birthday in advance . because i dont know when is the birthday. continuation filled with laughter and all your favorite moments 🎉
+May your day be as extraordinary as you are 🌟
+Celebrating you today and always 🥳
+May every moment of this year bring you joy and success 💫
+You deserve more than anything , today and every day
+To many more years ahead, filled with happiness and achievements 🎂
+May you every dream come true and you get whay you want  🚀
+legend nida san .</p>
+        <button class="button" id="play-music">Play Music</button>
+    </div>
+
+    <audio id="birthday-music" loop>
+        <source src="B.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Theme Toggle
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            toggleButton.textContent = body.classList.contains('dark-mode') ? '🌙' : '🌞';
+            toggleButton.classList.toggle('dark');
+        });
+
+        // Play Music
+        const playMusicButton = document.getElementById('play-music');
+        const audio = document.getElementById('birthday-music');
+        playMusicButton.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playMusicButton.textContent = "Pause Music";
+            } else {
+                audio.pause();
+                playMusicButton.textContent = "Play Music";
+            }
+        });
+    </script>
+</body>
+</html>
